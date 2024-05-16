@@ -828,3 +828,10 @@ func (e *Event) MACAddr(key string, ha net.HardwareAddr) *Event {
 	e.buf = enc.AppendMACAddr(enc.AppendKey(e.buf, key), ha)
 	return e
 }
+
+func (e *Event) GetBuf() []byte {
+	if e == nil {
+		return nil
+	}
+	return e.buf
+}

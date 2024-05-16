@@ -9,8 +9,8 @@ import (
 
 	"net/http/httptest"
 
-	"github.com/rs/zerolog"
-	"github.com/rs/zerolog/hlog"
+	"github.com/rhinonet/zerolog"
+	"github.com/rhinonet/zerolog/hlog"
 )
 
 // fake alice to avoid dep
@@ -53,7 +53,7 @@ func Example_handler() {
 	c = c.Append(hlog.RemoteAddrHandler("ip"))
 	c = c.Append(hlog.UserAgentHandler("user_agent"))
 	c = c.Append(hlog.RefererHandler("referer"))
-	//c = c.Append(hlog.RequestIDHandler("req_id", "Request-Id"))
+	// c = c.Append(hlog.RequestIDHandler("req_id", "Request-Id"))
 
 	// Here is your final handler
 	h := c.Then(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {

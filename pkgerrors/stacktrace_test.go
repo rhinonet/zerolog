@@ -9,7 +9,7 @@ import (
 	"testing"
 
 	"github.com/pkg/errors"
-	"github.com/rs/zerolog"
+	"github.com/rhinonet/zerolog"
 )
 
 func TestLogStack(t *testing.T) {
